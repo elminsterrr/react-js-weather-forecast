@@ -3,10 +3,12 @@ import ChartWeatherItem from './ChartWeatherItem';
 
 const ChartWeather = (props) => {
   const dataFor10Days = props.tenDaysArray.map((oneElObj) => {
+    const iconUrl = oneElObj.icon_url;
+    const iconUrlHttps = iconUrl.replace('http://', 'https://');
     return (
       <ChartWeatherItem
         key={oneElObj.date.epoch}
-        iconLink={oneElObj.icon_url}
+        iconLink={iconUrlHttps}
         date={oneElObj.date}
         high={oneElObj.high.celsius}
         low={oneElObj.low.celsius}
