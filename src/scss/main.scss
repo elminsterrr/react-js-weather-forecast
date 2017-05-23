@@ -1,0 +1,80 @@
+@import "_mixins";
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,500,700&amp;subset=latin-ext);
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #777;
+  .container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    td, th {
+      vertical-align: middle !important;
+      text-align: center !important;
+    }
+    th {
+      padding: 0 20px;
+    }
+    ul {
+      list-style-type: none;
+    }
+    h2 {
+      text-align: center;
+    }
+    .input-group {
+      width: 1007px;
+      margin: 20px 0;
+    }
+    .submit {
+      cursor: pointer;
+    }
+    .welcome {
+      text-align: center;
+    }
+    .google-map {
+      margin: 0 auto;
+      height: 250px;
+      width: 940px;
+    }
+    .table-weather {
+      margin: 0 auto;
+    }
+    .hot {
+      color: red;
+      font-size: 20px;
+    }
+    .cold {
+      color: blue;
+      font-size: 20px;
+    }
+    .rain-data {
+      position: relative;
+      top: -10px;
+      font-size: 12px;
+    }
+    .mm {
+      position: relative;
+      top: -10px;
+      font-size: 10px;
+    }
+    .history,
+    .table-weather-history {
+      margin-bottom: 50px;
+    }
+  }
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  @include italic;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  @include italic;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  @include italic;
+}
+:-moz-placeholder { /* Firefox 18- */
+  @include italic;
+}
