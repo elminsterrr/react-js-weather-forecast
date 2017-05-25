@@ -7,18 +7,18 @@ import HistoryList from '../containers/HistoryList';
 import WeatherForecastName from '../containers/WeatherForecastName';
 import WeatherForecastFromHistory from '../containers/WeatherForecastFromHistory';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <SearchBar />
-        <Location />
-        <WeatherForecast />
-        <HistoryName />
-        <HistoryList />
-        <WeatherForecastName />
-        <WeatherForecastFromHistory />
-      </div>
-    );
-  }
-}
+const App = (props) => {
+  return (
+    <div>
+      <SearchBar />
+      <Location />
+      <WeatherForecast />
+      <HistoryName />
+      <HistoryList />
+      <WeatherForecastName />
+      <WeatherForecastFromHistory />
+    </div>
+  );
+};
+
+export default App;
