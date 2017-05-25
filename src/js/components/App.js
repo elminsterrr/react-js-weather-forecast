@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import SearchBar from '../containers/SearchBar';
 import Location from '../containers/Location';
 import WeatherForecast from '../containers/WeatherForecast';
