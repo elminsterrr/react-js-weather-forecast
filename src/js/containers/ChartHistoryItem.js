@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { selectHistory } from '../actions/index';
-import { bindActionCreators } from 'redux';
 
 class ChartHistoryItem extends Component {
   render() {

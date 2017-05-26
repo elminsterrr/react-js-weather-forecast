@@ -19,17 +19,16 @@ class SearchBar extends Component {
   }
 
   handleSubmit(event) {
-    if ((this.state.term === '' ) && (!this.state.appStarted)) {
+    if ((this.state.term === '') && (!this.state.appStarted)) {
       return;
-    } else if ((this.state.term === '' ) && (this.state.appStarted)) {
+    } else if ((this.state.term === '') && (this.state.appStarted)) {
       alert('Form was submitted without input! Application will now reset!');
       return;
-    } else {
-      event.preventDefault();
-      this.props.fetchLocation(this.state.term);
-      this.setState({ appStarted: true });
-      this.setState({ term: '' });
     }
+    event.preventDefault();
+    this.props.fetchLocation(this.state.term);
+    this.setState({ appStarted: true });
+    this.setState({ term: '' });
   }
 
   render() {

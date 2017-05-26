@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ChartWeather from '../components/ChartWeather'
 
 class HistoryName extends Component {
   renderHistoryName(stateArrayPosition) {
     if (stateArrayPosition.length === 0) {
       return (
-        <div></div>
+        <div />
       );
     }
     return (

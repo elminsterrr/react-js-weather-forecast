@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ChartWeather from '../components/ChartWeather'
 
 class WeatherForecastName extends Component {
   renderLocationFromHistory(stateArrayPosition) {
     if (stateArrayPosition === null) {
       return (
-        <div></div>
+        <div />
       );
     }
-    const name = this.props.locationFromStore[stateArrayPosition].results[0].formatted_address;
+    const name = this
+      .props
+      .locationFromStore[stateArrayPosition]
+      .results[0]
+      .formatted_address;
     return (
       <div>
         <hr />

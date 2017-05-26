@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ChartWeather from '../components/ChartWeather'
+import ChartWeather from '../components/ChartWeather';
 
 class WeatherForecast extends Component {
   renderWeather(data) {
-    if ((data.length === 0) || (!data))  {
+    if ((data.length === 0) || (!data)) {
       return (
         <tr className="col-lg-12">
-          <th></th>
+          <th />
         </tr>
       );
     }

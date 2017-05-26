@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { fetchWeather } from '../actions/index';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { fetchWeather } from '../actions/index';
 
 class GoogleMap extends Component {
   componentDidMount() {
