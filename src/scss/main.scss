@@ -5,7 +5,7 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 18px;
   font-weight: 400;
-  color: #777;
+  color: #000;
 
   .container {
     display: flex;
@@ -26,8 +26,32 @@ body {
       list-style-type: none;
     }
 
+    h1 {
+      text-align: center;
+      font-size: 23px;
+    }
+
     h2 {
       text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .last-search-title {
+      text-align: center;
+      margin-bottom: 0px;
+    }
+
+    .last-search-name {
+      text-align: center;
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .back-home {
+      margin: 43px auto 0px auto;
     }
 
     .input-group {
@@ -79,6 +103,7 @@ body {
     .table-weather-history {
       margin-bottom: 50px;
     }
+
   }
 }
 

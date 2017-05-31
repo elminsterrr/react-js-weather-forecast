@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { selectHistory } from '../actions/index';
 
@@ -10,7 +11,9 @@ class ChartHistoryItem extends Component {
         className="submit"
         onClick={() => this.props.selectHistoryFromStore(this.props.keyToProps)}
       >
-        {this.props.formattedAddress}
+        <Link to={'/history'}>
+          {this.props.formattedAddress}
+        </Link>
       </li>
     );
   }

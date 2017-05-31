@@ -1,7 +1,7 @@
 import React from 'react';
 import ChartWeatherItem from './ChartWeatherItem';
 
-const ChartWeather = (props) => {
+function ChartWeather(props) {
   const dataFor10Days = props.tenDaysArray.map((oneElObj) => {
     const iconUrl = oneElObj.icon_url;
     const iconUrlHttps = iconUrl.replace('http://', 'https://');
@@ -21,6 +21,6 @@ const ChartWeather = (props) => {
       {dataFor10Days}
     </tr>
   );
-};
+}
 
 export default ChartWeather;

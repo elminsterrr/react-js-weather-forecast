@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class HistoryName extends Component {
-  renderHistoryName(stateArrayPosition) {
+  renderHistoryName() {
+    const stateArrayPosition = this.props.weatherFromStore;
     if (stateArrayPosition.length === 0) {
       return (
         <div />
@@ -11,7 +12,7 @@ class HistoryName extends Component {
     return (
       <div>
         <hr />
-        <p>Choose one city from search history to recall its forecast:</p>
+        <p>Choose a city from search history to recall its forecast from app local state:</p>
       </div>
     );
   }
@@ -19,16 +20,14 @@ class HistoryName extends Component {
   render() {
     return (
       <div>
-        {this.renderHistoryName(this.props.weatherFromStore)}
+        {this.renderHistoryName()}
       </div>
     );
   }
 }
 
 function mapStateToProps(state) {
-  return {
-    weatherFromStore: state.weather
-   };
+  return { weatherFromStore: state.weather };
 }
 
 export default connect(mapStateToProps)(HistoryName);

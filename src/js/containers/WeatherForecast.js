@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import ChartWeather from '../components/ChartWeather';
 
 class WeatherForecast extends Component {
-  renderWeather(data) {
+  renderWeather() {
+    const data = this.props.weatherLastSearchFromStore;
     if ((data.length === 0) || (!data)) {
       return (
         <tr className="col-lg-12">
@@ -19,11 +20,11 @@ class WeatherForecast extends Component {
 
   render() {
     return (
-        <table className="table-weather">
-          <tbody>
-            {this.renderWeather(this.props.weatherLastSearchFromStore)}
-          </tbody>
-        </table>
+      <table className="table-weather">
+        <tbody>
+          {this.renderWeather()}
+        </tbody>
+      </table>
     );
   }
 }

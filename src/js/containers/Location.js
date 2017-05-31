@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 import GoogleMap from './GoogleMap';
 
 class Location extends Component {
-  renderLocation(data) {
+  renderLocation() {
+    const data = this.props.locationLastSearchFromStore;
     if ((data.length === 0) || (!data)) {
       return (
         <div className="welcome">
-          Get a 10-day weather forecast in your favorite cities!
-          <br />
-          Tip: Submit without input to reset application.
+          <h1>Get a 10-day weather forecast in your favorite cities!</h1>
+          <p>Protip: Submit without input to reset application.</p>
         </div>
       );
     }
@@ -24,7 +24,7 @@ class Location extends Component {
   render() {
     return (
       <div>
-        {this.renderLocation(this.props.locationLastSearchFromStore)}
+        {this.renderLocation()}
       </div>
     );
   }

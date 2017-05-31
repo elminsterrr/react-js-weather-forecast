@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
   weather: WeatherReducer,
   locationLastSearch: LocationReducerLastSearch,
   weatherLastSearch: WeatherReducerLastSearch,
-  history: HistoryReducer
+  history: HistoryReducer,
 });
 
 export default rootReducer;

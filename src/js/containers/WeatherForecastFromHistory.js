@@ -36,8 +36,8 @@ class WeatherForecastFromHistory extends Component {
 function mapStateToProps(state) {
   return {
     historyFromStore: state.history,
-    weatherFromStore: state.weather
-   };
+    weatherFromStore: state.weather,
+  };
 }
 
 export default connect(mapStateToProps)(WeatherForecastFromHistory);

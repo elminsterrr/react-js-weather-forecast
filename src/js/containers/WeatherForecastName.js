@@ -34,8 +34,8 @@ class WeatherForecastName extends Component {
 function mapStateToProps(state) {
   return {
     historyFromStore: state.history,
-    locationFromStore: state.location
-   };
+    locationFromStore: state.location,
+  };
 }
 
 export default connect(mapStateToProps)(WeatherForecastName);

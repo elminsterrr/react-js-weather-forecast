@@ -8,8 +8,8 @@ class SearchBar extends Component {
     super(props);
     this.state = {
       term: '',
-      appStarted: false
-     };
+      appStarted: false,
+    };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }

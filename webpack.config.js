@@ -1,16 +1,11 @@
 const webpack = require('webpack');
-const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const SRC_DIR = path.resolve(__dirname, 'src');
-const DIST_DIR = path.resolve(__dirname, 'dist');
-
 module.exports = {
-  entry: SRC_DIR + '/js/index.js',
+  entry: __dirname + '/src/js/index.js',
   output: {
-    path: DIST_DIR + '/app',
-    filename: 'bundle.js',
-    publicPath: '/app'
+    path: __dirname + '/dist',
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -44,5 +39,17 @@ module.exports = {
       filename: 'bundle.css',
       allChunks: true,
     }),
-  ]
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      }
+    }),
+  ],
+  devServer: {
+    port: 8080,
+    historyApiFallback: {
+      index: 'index.html',
+    }
+  }
 };

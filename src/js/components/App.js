@@ -1,24 +1,17 @@
 import React from 'react';
-import SearchBar from '../containers/SearchBar';
-import Location from '../containers/Location';
-import WeatherForecast from '../containers/WeatherForecast';
-import HistoryName from '../containers/HistoryName';
-import HistoryList from '../containers/HistoryList';
-import WeatherForecastName from '../containers/WeatherForecastName';
-import WeatherForecastFromHistory from '../containers/WeatherForecastFromHistory';
+import { Route, Switch } from 'react-router-dom';
+import Home from './Home';
+import RouteHistory from '../containers/RouteHistory';
 
-const App = (props) => {
+function App() {
   return (
     <div>
-      <SearchBar />
-      <Location />
-      <WeatherForecast />
-      <HistoryName />
-      <HistoryList />
-      <WeatherForecastName />
-      <WeatherForecastFromHistory />
+      <Switch>
+        <Route path="/history" component={RouteHistory} />
+        <Route path="/" component={Home} />
+      </Switch>
     </div>
   );
-};
+}
 
 export default App;

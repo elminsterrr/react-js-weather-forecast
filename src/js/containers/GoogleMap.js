@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { fetchWeather } from '../actions/index';
 
 class GoogleMap extends Component {
   componentDidMount() {
@@ -9,15 +7,17 @@ class GoogleMap extends Component {
       zoom: 11,
       center: {
         lat: this.props.lat,
-        lng: this.props.lng
-      }
+        lng: this.props.lng,
+      },
     });
-    this.props.fetchWeather(this.props.lat, this.props.lng);
   }
 
   render() {
+    const last = this.props.lastSearchFromStore['0'].results['0'].formatted_address;
     return (
       <div>
+        <p className="last-search-title">Last searched city:</p>
+        <p className="last-search-name">{last}</p>
         <hr />
         <div className="google-map" ref="map" />
         <hr />
@@ -26,8 +26,8 @@ class GoogleMap extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchWeather }, dispatch);
+function mapStateToProps(state) {
+  return { lastSearchFromStore: state.locationLastSearch };
 }
 
-export default connect(null, mapDispatchToProps)(GoogleMap);
+export default connect(mapStateToProps)(GoogleMap);
