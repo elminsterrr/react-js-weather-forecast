@@ -3,6 +3,7 @@ import axios from 'axios';
 export const FETCH_LOCATION = 'FETCH_LOCATION';
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 export const HISTORY_SELECTED = 'HISTORY_SELECTED';
+export const SHOW_INFO = 'SHOW_INFO';
 const API_KEY_GOOGLE = 'AIzaSyDNMmI2f7qIcBnKgV1dYXmi995BY_8zoJM';
 const API_KEY_WUNDERGROUND = 'cd8c7ea98a37877f';
 
@@ -27,5 +28,12 @@ export function selectHistory(historyEntry) {
   return {
     type: HISTORY_SELECTED,
     payload: historyEntry,
+  };
+}
+
+export function showInfo(info) {
+  return {
+    type: SHOW_INFO,
+    payload: info,
   };
 }

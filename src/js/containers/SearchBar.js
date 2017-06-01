@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchLocation } from '../actions/index';
+import { fetchLocation, showInfo } from '../actions/index';
 
 class SearchBar extends Component {
   constructor(props) {
     super(props);
     this.state = {
       term: '',
-      appStarted: false,
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,16 +18,15 @@ class SearchBar extends Component {
   }
 
   handleSubmit(event) {
-    if ((this.state.term === '') && (!this.state.appStarted)) {
-      return;
-    } else if ((this.state.term === '') && (this.state.appStarted)) {
-      alert('Form was submitted without input! Application will now reset!');
-      return;
+    if (this.state.term === '') {
+      event.preventDefault();
+      this.props.showInfo('This field cannot be blank. Please enter a valid city name.');
+    } else {
+      event.preventDefault();
+      this.props.fetchLocation(this.state.term);
+      this.props.showInfo('');
+      this.setState({ term: '' });
     }
-    event.preventDefault();
-    this.props.fetchLocation(this.state.term);
-    this.setState({ appStarted: true });
-    this.setState({ term: '' });
   }
 
   render() {
@@ -36,7 +34,7 @@ class SearchBar extends Component {
       <form onSubmit={this.handleSubmit} className="input-group">
         <input
           className="form-control"
-          placeholder="Enter city name to see weather forecast"
+          placeholder={this.props.showInfoFromStore}
           value={this.state.term}
           onChange={this.handleInputChange}
         />
@@ -48,8 +46,12 @@ class SearchBar extends Component {
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchLocation }, dispatch);
+function mapStateToProps(state) {
+  return { showInfoFromStore: state.showInfo };
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchLocation, showInfo }, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

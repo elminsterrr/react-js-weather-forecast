@@ -9,7 +9,7 @@ class Location extends Component {
       return (
         <div className="welcome">
           <h1>Get a 10-day weather forecast in your favorite cities!</h1>
-          <p>Protip: Submit without input to reset application.</p>
+          <p>Protip: You can enter just city name or city name and country.</p>
         </div>
       );
     }
