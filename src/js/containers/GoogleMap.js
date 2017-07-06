@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
@@ -13,7 +14,8 @@ class GoogleMap extends Component {
   }
 
   render() {
-    const last = this.props.lastSearchFromStore['0'].results['0'].formatted_address;
+    const lastSearchLocation = _.last(this.props.location);
+    const last = lastSearchLocation.results['0'].formatted_address;
     return (
       <div>
         <p className="last-search-title">Last searched city:</p>
@@ -27,7 +29,7 @@ class GoogleMap extends Component {
 }
 
 function mapStateToProps(state) {
-  return { lastSearchFromStore: state.locationLastSearch };
+  return { location: state.location };
 }
 
 export default connect(mapStateToProps)(GoogleMap);

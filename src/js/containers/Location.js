@@ -1,11 +1,11 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import GoogleMap from './GoogleMap';
 
 class Location extends Component {
   renderLocation() {
-    const data = this.props.locationLastSearchFromStore;
-    if ((data.length === 0) || (!data)) {
+    if ((this.props.location.length === 0) || (!this.props.location)) {
       return (
         <div className="welcome">
           <h1>Get a 10-day weather forecast in your favorite cities!</h1>
@@ -13,8 +13,9 @@ class Location extends Component {
         </div>
       );
     }
-    const lat = data[0].results[0].geometry.location.lat;
-    const lng = data[0].results[0].geometry.location.lng;
+    const data = _.last(this.props.location);
+    const lat = data.results[0].geometry.location.lat;
+    const lng = data.results[0].geometry.location.lng;
     const reactUniqueKey = Date.now();
     return (
       <GoogleMap key={reactUniqueKey} lat={lat} lng={lng} />
@@ -31,7 +32,7 @@ class Location extends Component {
 }
 
 function mapStateToProps(state) {
-  return { locationLastSearchFromStore: state.locationLastSearch };
+  return { location: state.location };
 }
 
 export default connect(mapStateToProps)(Location);

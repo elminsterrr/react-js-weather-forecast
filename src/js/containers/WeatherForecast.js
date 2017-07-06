@@ -1,18 +1,19 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ChartWeather from '../components/ChartWeather';
 
 class WeatherForecast extends Component {
   renderWeather() {
-    const data = this.props.weatherLastSearchFromStore;
-    if ((data.length === 0) || (!data)) {
+    if ((this.props.weather.length === 0) || (!this.props.weather)) {
       return (
         <tr className="col-lg-12">
           <th />
         </tr>
       );
     }
-    const tenDaysArray = data[0].forecast.simpleforecast.forecastday;
+    const data = _.last(this.props.weather);
+    const tenDaysArray = data.forecast.simpleforecast.forecastday;
     return (
       <ChartWeather tenDaysArray={tenDaysArray} />
     );
@@ -30,7 +31,7 @@ class WeatherForecast extends Component {
 }
 
 function mapStateToProps(state) {
-  return { weatherLastSearchFromStore: state.weatherLastSearch };
+  return { weather: state.weather };
 }
 
 export default connect(mapStateToProps)(WeatherForecast);
