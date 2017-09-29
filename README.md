@@ -6,7 +6,7 @@ An application for searching weather forecast in cities around the world. Create
 ## Install
 
 ```sh
-$ git clone react-js-weather-forecast
+$ git clone https://github.com/elminsterrr/react-js-weather-forecast.git
 ```
 
 ```sh
