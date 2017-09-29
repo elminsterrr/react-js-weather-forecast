@@ -50,8 +50,13 @@ body {
       font-weight: 700;
     }
 
+    .back-button {
+      margin: 0 auto;
+      text-align: center;
+    }
+
     .back-home {
-      margin: 43px auto 0px auto;
+      margin: 0px auto 0px auto;
     }
 
     .input-group {
@@ -112,12 +117,18 @@ body {
       margin-bottom: 50px;
     }
 
+    .history-heading {
+      padding-top: 25px;
+    }
+
     .prevB {
       padding: 0 10px;
+      margin-bottom: 10px;
     }
 
     .nextB {
       padding: 0 10px;
+      margin-bottom: 10px;
       margin-left: 10px;
     }
 
