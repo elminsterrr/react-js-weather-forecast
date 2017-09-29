@@ -19,7 +19,7 @@ body {
     }
 
     th {
-      padding: 0 20px;
+      padding: 0 10px;
     }
 
     ul {
@@ -61,6 +61,8 @@ body {
 
     .submit {
       cursor: pointer;
+      margin: 0 auto;
+      text-align: center;
     }
 
     .welcome {
@@ -70,10 +72,15 @@ body {
     .google-map {
       margin: 0 auto;
       height: 250px;
-      width: 940px;
+      width: 250px;
     }
 
     .table-weather {
+      margin: 0 auto;
+    }
+
+    .description {
+      width: 300px;
       margin: 0 auto;
     }
 
@@ -101,7 +108,21 @@ body {
 
     .history,
     .table-weather-history {
+      padding: 0;
       margin-bottom: 50px;
+    }
+
+    .prevB {
+      padding: 0 10px;
+    }
+
+    .nextB {
+      padding: 0 10px;
+      margin-left: 10px;
+    }
+
+    .table-weather-history {
+      margin: 0 auto;
     }
 
   }

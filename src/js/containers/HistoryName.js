@@ -10,9 +10,9 @@ class HistoryName extends Component {
       );
     }
     return (
-      <div>
+      <div className="description">
         <hr />
-        <p>Choose a city from search history to recall its forecast from app local state:</p>
+        <p>Choose a city from search history to recall its forecast from local state:</p>
       </div>
     );
   }

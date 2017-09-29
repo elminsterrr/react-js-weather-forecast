@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ChartWeather from '../components/ChartWeather';
+import ChartWeather from '../containers/ChartWeather';
 
 class WeatherForecast extends Component {
   renderWeather() {

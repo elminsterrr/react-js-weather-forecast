@@ -8,7 +8,7 @@ class Location extends Component {
     if ((this.props.location.length === 0) || (!this.props.location)) {
       return (
         <div className="welcome">
-          <h1>Get a 10-day weather forecast in your favorite cities!</h1>
+          <h1>Get a 9-day weather forecast in your favorite cities!</h1>
           <p>Protip: You can enter just city name or city name and country.</p>
         </div>
       );
