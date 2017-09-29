@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ChartHistoryItem from './ChartHistoryItem';
@@ -13,9 +14,10 @@ class HistoryList extends Component {
             );
           }
           const formattedAddress = data.results[0].formatted_address;
+          const keyUnique = _.uniqueId('item_');
           return (
             <ChartHistoryItem
-              key={index}
+              key={keyUnique}
               keyToProps={index}
               formattedAddress={formattedAddress}
             />
