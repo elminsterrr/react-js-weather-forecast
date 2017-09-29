@@ -31,17 +31,20 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="input-group">
-        <input
-          className="form-control"
-          placeholder={this.props.showInfoFromStore}
-          value={this.state.term}
-          onChange={this.handleInputChange}
-        />
-        <span className="input-group-btn">
-          <button type="submit" className="btn btn-secondary submit">Submit</button>
-        </span>
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit} className="input-group">
+          <input
+            className="form-control"
+            placeholder={this.props.showInfoFromStore}
+            value={this.state.term}
+            onChange={this.handleInputChange}
+          />
+          <span className="input-group-btn">
+            <button type="submit" className="btn btn-secondary submit">Submit</button>
+          </span>
+        </form>
+        <hr />
+      </div>
     );
   }
 }
