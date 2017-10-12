@@ -30,7 +30,8 @@
       font-size: 30px;
       font-weight: 700; }
     body .container .back-button {
-      margin: 0 auto; }
+      margin: 0 auto;
+      text-align: center; }
     body .container .back-home {
       margin: 0px auto 0px auto; }
     body .container .input-group {
@@ -69,6 +70,8 @@
     body .container .table-weather-history {
       padding: 0;
       margin-bottom: 50px; }
+    body .container .history-heading {
+      padding-top: 25px; }
     body .container .prevB {
       padding: 0 10px;
       margin-bottom: 10px; }

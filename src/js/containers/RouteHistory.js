@@ -7,18 +7,6 @@ import HistoryName from '../containers/HistoryName';
 import HistoryList from '../containers/HistoryList';
 
 class RouteHistory extends Component {
-  componentDidMount() {
-    if (this.props.historyFromStore !== null) {
-      new google.maps.Map(this.refs.map, {
-        zoom: 11,
-        center: {
-          lat: this.props.locationFromStore[this.props.historyFromStore].results['0'].geometry.location.lat,
-          lng: this.props.locationFromStore[this.props.historyFromStore].results['0'].geometry.location.lng,
-        },
-      });
-    }
-  }
-
   render() {
     if (this.props.historyFromStore === null) {
       return (
@@ -35,8 +23,6 @@ class RouteHistory extends Component {
           <Link to="/" className="btn btn-info btn-lg back-home">Back To Home</Link>
         </div>
         <WeatherForecastName />
-        <div className="google-map" ref="map" />
-        <hr />
         <WeatherForecastFromHistory />
         <HistoryName />
         <HistoryList />
