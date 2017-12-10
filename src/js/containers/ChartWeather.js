@@ -14,6 +14,9 @@ class ChartWeather extends Component {
   buttonsView() {
     return (
       <div>
+        <div className="page-number">
+          Page: {this.state.page}/3
+        </div>
         <div className="buttons">
           <button className="btn btn-secondary prevB" onClick={this.handlePrev}>Prev 3-days</button>
           <button className="btn btn-secondary nextB" onClick={this.handleNext}>Next 3-days</button>
