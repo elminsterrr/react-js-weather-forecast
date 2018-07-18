@@ -19,6 +19,7 @@ $ npm install
 ```
 
 ## Run
+You should generate your own API keys for Google API and Weather Underground API and add them to project (actions\index.js) before running the app.
 
 ```sh
 $ npm run build
