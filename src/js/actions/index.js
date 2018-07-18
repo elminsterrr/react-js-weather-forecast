@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_KEY_GOOGLE, API_KEY_WUNDERGROUND } from './secret'
+import { API_KEY_GOOGLE, API_KEY_WUNDERGROUND } from './secret';
 
 export const FETCH_LOCATION = 'FETCH_LOCATION';
 export const FETCH_WEATHER = 'FETCH_WEATHER';
